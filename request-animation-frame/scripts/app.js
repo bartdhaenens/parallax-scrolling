@@ -4,19 +4,22 @@
 
     var scrollEl = document.body; // Element that user scrolls.
     var parallaxContainer = document.getElementById('parallax-container');
+
     var parallaxSections = parallaxContainer.querySelectorAll('.parallax-section');
     var parallaxSectionHeight = parallaxSections[0].offsetHeight;
+
     var parallaxBgs = parallaxContainer.querySelectorAll('.parallax-bg');
-    var parallaxBgHeight = parallaxBgs[0].offsetHeight;
-    var diffHeight = parallaxBgHeight - parallaxSectionHeight;
     var numOfParallaxBgs = parallaxBgs.length;
-    var parallaxBgBoundingRects = [];
+    var parallaxBgHeight = parallaxBgs[0].offsetHeight;
+
+    var diffHeight = parallaxBgHeight - parallaxSectionHeight;
+    var parallaxBgOffsets = [];
     var ind, parallaxBg, parallaxBgBoundingRect, parallaxBgOffset, parallaxScrollAmt, transform;
 
-    // Cache initial bounding rectangles of parallax backgrounds.
+    // Cache initial offsets of parallax backgrounds.
     for(ind = 0; ind < numOfParallaxBgs; ind++){
       parallaxBgBoundingRect = parallaxBgs[ind].getBoundingClientRect();
-      parallaxBgBoundingRects.push(parallaxBgBoundingRect);
+      parallaxBgOffsets.push(parallaxBgBoundingRect.top + scrollEl.scrollTop);
     }
 
     var render = function(){
@@ -24,11 +27,9 @@
       // Loop thru parallax backgrounds.
       for(ind = 0; ind < numOfParallaxBgs; ind++){
 
-        // Cache the DOM element.
+        // Calculate the transformation (`~~` is a bitwise round).
         parallaxBg = parallaxBgs[ind];
-
-        // Calculate transformation (`~~` is a bitwise round).
-        parallaxBgOffset = scrollEl.scrollTop - parallaxBgBoundingRects[ind].top;
+        parallaxBgOffset = scrollEl.scrollTop - parallaxBgOffsets[ind];
         parallaxScrollAmt = ~~(parallaxBgOffset / parallaxSectionHeight * diffHeight);
         transform = 'translate3d(0, ' + parallaxScrollAmt + 'px, 0)';
 

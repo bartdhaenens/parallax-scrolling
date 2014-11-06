@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <link href="styles/app.css" rel="stylesheet" type="text/css">
+
+  </head>
+  <body>
+
+    <div class="parallax-container">
+
+      <div class="parallax-group group1">
+        <div class="parallax-layer parallax-layer--mid box-shadow-bottom kitten1"></div>
+        <div class="parallax-layer parallax-layer--fore ctr-parent">
+          <div class="ctr-child">
+            <h1 class="text-shadow-middle">True parallax via CSS perspective.</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="parallax-group group2">
+        <div class="parallax-layer parallax-layer--back kitten4"></div>
+        <div class="parallax-layer parallax-layer--mid"></div>
+        <div class="parallax-layer parallax-layer--fore ctr-parent">
+          <div class="ctr-child">
+            <h1 class="text-shadow-middle">Three layers, each scrolling at different speeds.</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="parallax-group group3">
+        <div class="parallax-layer parallax-layer--mid box-shadow-top ctr-parent kitten3">
+          <div class="ctr-child">
+            <h1>Must end with a lone midground element, though (see readme).</h1>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+<!-- Uncomment below element and script
+      (and corresponding CSS)
+      for a custom debugging tool.
+-->
+<!--
+    <div class="debug">
+      <label><input type="checkbox"> Debug</label>
+    </div>
+
+    <script>
+      var debugInput = document.querySelector('input');
+      var updateDebugState = function(){
+        document.body.classList.toggle('debug-on', debugInput.checked);
+      };
+      debugInput.addEventListener('click', updateDebugState);
+      updateDebugState();
+    </script>
+-->
+
+  </body>
+</html>

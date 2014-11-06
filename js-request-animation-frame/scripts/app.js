@@ -5,14 +5,14 @@
     var scrollEl = document.body; // Element that user scrolls.
     var parallaxContainer = document.getElementById('parallax-container');
 
-    var parallaxSections = parallaxContainer.querySelectorAll('.parallax-section');
-    var parallaxSectionHeight = parallaxSections[0].offsetHeight;
+    var parallaxGroups = parallaxContainer.querySelectorAll('.parallax-group');
+    var parallaxGroupHeight = parallaxGroups[0].offsetHeight;
 
     var parallaxBgs = parallaxContainer.querySelectorAll('.parallax-bg');
     var numOfParallaxBgs = parallaxBgs.length;
     var parallaxBgHeight = parallaxBgs[0].offsetHeight;
 
-    var diffHeight = parallaxBgHeight - parallaxSectionHeight;
+    var diffHeight = parallaxBgHeight - parallaxGroupHeight;
     var parallaxBgOffsets = [];
     var ind, parallaxBg, parallaxBgBoundingRect, parallaxBgOffset, parallaxScrollAmt, transform;
 
@@ -30,7 +30,7 @@
         // Calculate the transformation (`~~` is a bitwise round).
         parallaxBg = parallaxBgs[ind];
         parallaxBgOffset = scrollEl.scrollTop - parallaxBgOffsets[ind];
-        parallaxScrollAmt = ~~(parallaxBgOffset / parallaxSectionHeight * diffHeight);
+        parallaxScrollAmt = ~~(parallaxBgOffset / parallaxGroupHeight * diffHeight);
         transform = 'translate3d(0, ' + parallaxScrollAmt + 'px, 0)';
 
         // Transform the DOM element.

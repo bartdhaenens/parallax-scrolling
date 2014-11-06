@@ -1,0 +1,143 @@
+@charset 'UTF-8';
+body {
+  margin: 0;
+  font-family: sans-serif;
+  color: white;
+}
+h1 {
+  font-size: 2.25rem;
+}
+/* Parallax Styles */
+.parallax-container {
+  height: 460px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-perspective: 300px;
+  perspective: 300px;
+  /**
+  * Placing `-webkit-overflow-scrolling: touch` here or above
+  * (on `body` or `html`) breaks parallax.
+  */
+}
+.parallax-group {
+  height: 460px;
+  height: 100vh;
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  /**
+  * Placing `-webkit-overflow-scrolling: touch` here or below
+  * (on its children) doesn't invoke inertial scrolling.
+  */
+}
+.parallax-layer {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-size: cover;
+  background-position: center;
+}
+/**
+* Tut's recommended formula:
+* scale = 1 + (translateZ * -1) / perspective
+*/
+.parallax-layer--back {
+  -webkit-transform: translateZ(-300px) scale(2);
+  -moz-transform: translateZ(-300px) scale(2);
+  -ms-transform: translateZ(-300px) scale(2);
+  -o-transform: translateZ(-300px) scale(2);
+  transform: translateZ(-300px) scale(2);
+  font-size: 1rem;
+}
+.parallax-layer--mid {
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  font-size: 1.5rem;
+}
+.parallax-layer--fore {
+  -webkit-transform: translateZ(111px) scale(0.63);
+  -moz-transform: translateZ(111px) scale(0.63);
+  -ms-transform: translateZ(111px) scale(0.63);
+  -o-transform: translateZ(111px) scale(0.63);
+  transform: translateZ(111px) scale(0.63);
+  font-size: 2rem;
+}
+.group1 {
+  z-index: 10;
+}
+.group2 {
+  z-index: 1;
+}
+.group3 {
+  z-index: 10;
+}
+/* Shadow Styles */
+.box-shadow-top {
+  box-shadow: 0 -0.5rem 1rem rgba(0, 0, 0, 0.375);
+}
+.box-shadow-bottom {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.375);
+}
+.text-shadow-middle {
+  text-shadow: 0 0 1rem rgba(0, 0, 0, 0.875);
+}
+/* Centering Styles */
+.ctr-parent {
+  text-align: center;
+  font-size: 0;
+}
+.ctr-parent::before {
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  content: '';
+}
+.ctr-child {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1rem;
+}
+/* Background Image Styles */
+.kitten1 {
+  background-image: url('../images/kitten1.jpg');
+}
+.kitten2 {
+  background-image: url('../images/kitten2.jpg');
+}
+.kitten3 {
+  background-image: url('../images/kitten3.jpg');
+}
+.kitten4 {
+  background-image: url('../images/kitten4.jpg');
+}
+/* Custom Debugging Tool Styles */
+/*
+.debug {
+  padding: 0.25em;
+  position: fixed;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 9999;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  font-size: 0.75rem;
+}
+.debug-on .parallax-group {
+  transform: translate3d(250px, 0, -100px) rotateY(30deg);
+}
+.debug-on .parallax-layer {
+  box-shadow: 0 0 0 2px #000;
+  opacity: 0.9;
+}
+.parallax-group {
+  -webkit-transition: -webkit-transform 0.5s;
+  -moz-transition: -webkit-transform 0.5s;
+  -ms-transition: -webkit-transform 0.5s;
+  -o-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+}
+*/

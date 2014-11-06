@@ -28,12 +28,12 @@
       for(ind = 0; ind < numOfParallaxBgs; ind++){
 
         // Calculate the transformation (`~~` is a bitwise round).
-        parallaxBg = parallaxBgs[ind];
         parallaxBgOffset = scrollEl.scrollTop - parallaxBgOffsets[ind];
         parallaxScrollAmt = ~~(parallaxBgOffset / parallaxGroupHeight * diffHeight);
         transform = 'translate3d(0, ' + parallaxScrollAmt + 'px, 0)';
 
         // Transform the DOM element.
+        parallaxBg = parallaxBgs[ind];
         parallaxBg.style.webkitTransform = transform;
         parallaxBg.style.MozTransform = transform;
         parallaxBg.style.msTransform = transform;

@@ -1,0 +1,62 @@
+@charset 'UTF-8';
+body {
+  margin: 0;
+  font-family: sans-serif;
+  text-align: center;
+  color: white;
+}
+h1 {
+  font-size: 2.25rem;
+}
+/* Faux-Parallax Styles */
+.back {
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.front {
+  height: 460px;
+  height: 100vh;
+  padding: 0 0.75rem;
+  background-position: center;
+  background-size: cover;
+}
+/* Shadow Styles */
+.box-shadow-top {
+  box-shadow: 0 -0.5rem 1rem rgba(0, 0, 0, 0.375);
+}
+.box-shadow-bottom {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.375);
+}
+.text-shadow-middle {
+  text-shadow: 0 0 1rem rgba(0, 0, 0, 0.875);
+}
+/* Centering Styles */
+.ctr-parent {
+  text-align: center;
+  font-size: 0;
+}
+.ctr-parent::before {
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  content: '';
+}
+.ctr-child {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1rem;
+}
+/* Background Image Styles */
+.kitten1 {
+  background-image: url('../images/kitten1.jpg');
+}
+.kitten2 {
+  background-image: url('../images/kitten2.jpg');
+}
+.kitten3 {
+  background-image: url('../images/kitten3.jpg');
+}
+.kitten4 {
+  background-image: url('../images/kitten4.jpg');
+}

@@ -70,7 +70,7 @@ Because the background is stationary (as opposed to scrolling at a different rat
 - Mac OS X Safari 7.1 (9537.85.10.17.1) - Great.
 - Mac OS X Firefox 33.0.2 - Great.
 - iOS Chrome 38.0.2125.67 - Good: Upon the browser's hiding of its address bar, a white bar of is briefly visible before the repaint is complete.
-- iOS Safari 8.1 - Poor: Because the browser adds an additional navigation bar to the bottom of the window, the background image still jumps (though fewer pixels that it would without the helper script). Also, upon the browser's hiding of its address bar, a white bar of is briefly visible before the repaint is complete.
+- iOS Safari 8.1 - Poor: Because the browser adds an additional navigation bar to the bottom of the window, the background image still jumps (though fewer pixels that it would without the helper script). Also, upon the browser's hiding of its address bar, a white gap is briefly visible before the repaint is complete.
 
 ## js-request-animation-frame
 
